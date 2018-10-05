@@ -1,21 +1,297 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-    <title>PayPal Node App</title>
+
+    <title>Pixie Shire</title>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Sigmar+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../Public/css/style.css" />
+    
+
+    <style>
+
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-image:url("../Public/css/images/backdrop.jpg");
+        }
+    
+    
+        #header {
+            width: 100%;
+            background-color: white;
+            height: 80px;
+            border-collapse: collapse;
+            position:fixed;
+            margin-top: 0px;
+            font-family: 'Acme', sans-serif;
+          
+            }
+    
+        #nav { width: 600px; float: right;  margin-top: 0px; margin-bottom: 30px;}
+        #logo a {  text-decoration: overline dotted; float: left; font-size: 40px; margin-top: 20px; color: #2196f3; font-weight: bold; margin-left:80px; }
+        #nav ul{
+        list-style: none;
+        display: block;
+        margin: 0 auto;
+        list-style: none;
+        }
+        #nav li{
+        margin-top: 20px;
+    
+        float: left;
+        padding-left: 20px;
+        }
+        #nav li a { color: #2196f3; opacity:0.7; font-size: 18px; text-decoration: none; font-family: 'Acme', sans-serif;
+            float: right; }
+        #nav li a.active { color:black; opacity:1; border-bottom: 2px solid #fff; }
+        #nav li a:hover { color: black; opacity:1; }
+    
+        #slide1{
+            background:url('images/backdrop.jpg') 50% 0 no-repeat fixed;
+            height: 670px;
+            padding: 200px 0 260px 0;
+            background-size: cover;
+            font-family: 'Acme', sans-serif;
+    
+            }
+    
+        #container{
+            margin-top:-70px;
+            height: 300px;
+            padding: 200px 0 260px 0;
+            background-size: cover;
+            
+    
+            margin-left: 40px;
+            width:50%;
+        
+        
+        }
+    
+        #video {
+            margin-top: -150px;
+            background-color: black;
+            margin-left: 40px;
+            border-radius :50px;
+    
+        }
+    
+    
+    
+        #text-container{
+            margin-left: 700px;
+            margin-right: 15px;
+            margin-top: -380px;
+            text-align: center;
+            font-family: 'Permanent Marker', cursive;
+    
+    
+        }
+    
+        #main-text {
+            margin-top: 20px;
+            font-family: 'Sigmar One', cursive;
+            font-size:60px;
+            color: rgb(37, 100, 235);
+        }
+    
+    
+     p{
+        font-family: 'Acme', sans-serif;
+         font-size: 16px;
+         padding-top:10px;
+         color: black;
+     }
+        #slide2{
+            background-color: #2196f3;
+            color: #fff;
+            height: 60px;
+            
+            padding: 200px 0 0px 0;
+            background-size: cover;
+            }
+    
+        .text-content{
+            color:white;
+            font-family: 'Permanent Marker', cursive;
+            margin-top:-190px;
+            margin-left:140px;
+    
+        }
+    
+    
+        #info{
+            font-size:50px;
+        }
+    
+        .quotes_container{
+            margin-top:40px;
+        
+        }
+    
+    
+    
+     
+    
+        #slide3{
+            background:url('images/backdrop2.jpeg') 50% 0 no-repeat fixed;
+            height: 1000px;
+            padding: 200px 0 260px 0;
+            background-size: cover;
+            font-family: 'Acme', sans-serif;
+    
+        }
+    
+        #containerOne{
+            height: 120px;
+            width: 300px;
+            background-color: rgb(184, 212, 240);
+            margin-left:250px;
+            margin-top:-40px;
+            border-radius: 90px;
+            color:white;
+            text-align: center;
+            
+        }
+      
+        #containerTwo{
+            height: 120px;
+            width: 400px;
+            background-color: rgb(184, 212, 240);
+            margin-left:200px;
+            margin-top:0px;
+            border-radius: 90px;
+            color:white;
+            text-align: center;
+            
+        }
+    
+        #Step1{
+            font-size: 32px;
+            padding-top:10px;
+            text-decoration: underline;
+        }
+    
+        p{
+            color:white;
+            margin-top:-10px;
+        }
+        #containerThree{
+             height: 120px;
+            width: 500px;
+            background-color: rgb(107, 165, 223);
+            margin-left:150px;
+            margin-top: 0px;
+            border-radius: 90px;
+        
+            text-align: center;
+            
+        }
+        
+        #Step2{
+            font-size: 32px;
+            padding-top:10px;
+            text-decoration: underline;
+        
+        }
+    
+        #containerFour{
+            height: 120px;
+           width: 600px;
+           background-color: rgb(66, 138, 209);
+            margin-left:100px;
+           margin-top: 0px;
+           border-radius: 90px;
+    
+           text-align: center;
+           
+       }
+      
+       #two{
+           color:black;
+       }
+       
+       #Step3{
+           font-size: 32px;
+           padding-top:10px;
+           text-decoration: underline;
+           color:white;
+       
+       }
+    
+       #containerFive{
+        height: 120px;
+       width: 700px;
+       background-color: dodgerblue;
+    margin-left:50px;
+       margin-top: 0px;
+       border-radius: 90px;
+    
+       text-align: center;
+    
+       
+    }
+    
+    #containerSix{
+        height: 120px;
+       width: 800px;
+       background-color: rgb(14, 87, 221);
+    
+       margin-top: 0px;
+       border-radius: 90px;
+    
+       text-align: center;
+       
+    }
+</style>
+    
 </head>
+<header id="header">
+    <div class="content">
+        <div id="logo">
+            <a href="">Pixie Shire </a>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="/" title="Home">Home</a>
+                </li>
+                <li>
+                    <a href="/" title="Next Section">How Pixie Shire Works?</a>
+                </li>
+                <li>
+                    <a href="/payments" title="Next Section">Payments</a>
+                </li>
+                <li>
+                    <a href="/" title="Next Section">To Do List</a>
+                </li>
+                <li>
+                    <a href="/" title="Next Section">Forum</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <body>
 
     <h1>Pay your Roommates</h1>
     <h2>Utilities this month: $25</h2>
-    <form action="/pay" method="post">
+    <form action="/pay" method="post" class=>
          <input type="submit" value="Pay">
     </form>
-    
 </body>
 </html>

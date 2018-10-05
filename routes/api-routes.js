@@ -148,7 +148,7 @@ module.exports = function(app) {
                     "items": [{
                         "name": "Utilities",
                         "sku": "item",
-                        "price": "1.00",
+                        "price": "25.00",
                         "currency": "USD",
                         "quantity": 1
                     }]
