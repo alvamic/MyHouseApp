@@ -230,3 +230,23 @@ body{
     background-size: cover;
     font-family: 'Acme', sans-serif;
 }
+
+#Sign{
+    background:url('https://media.giphy.com/media/l1BgRxgYjftTAy3N6/giphy.gif') 100% no-repeat ;
+
+    height:500px;
+    width:500px;
+    border-radius:50%;
+    margin-left: 450px;
+    margin-top:-10px;
+    margin-bottom:30px;
+
+}
+
+#signout{
+    font-family: 'Acme', sans-serif;
+    color: white;
+    padding-left:350px;
+    padding-top: 20px;
+    font-size:90px;
+}
