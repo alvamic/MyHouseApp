@@ -14,7 +14,7 @@ $(document).ready(function() {
       if (categoryString) {
         categoryString = "/category/" + categoryString;
       }
-      $.get("/api/todos" + categoryString, function(data) {
+      $.get("/api/posts" + categoryString, function(data) {
         console.log("Posts", data);
         posts = data;
         if (!posts || !posts.length) {
@@ -30,10 +30,10 @@ $(document).ready(function() {
     function deletePost(id) {
       $.ajax({
         method: "DELETE",
-        url: "/api/todos/" + id
+        url: "/api/posts/" + id
       })
         .then(function() {
-          getTodos(postCategorySelect.val());
+          getPosts(postCategorySelect.val());
         });
     }
   
