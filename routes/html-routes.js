@@ -14,7 +14,7 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../Public/PixieShire.html"));
+    res.sendFile(path.join(__dirname, "../Public/index.html"));
   });
 
   app.get("/payments", function(req, res) {
@@ -24,6 +24,14 @@ module.exports = function(app) {
   // blog route loads blog.html
   app.get("/blog", function(req, res) {
     res.sendFile(path.join(__dirname, "../Public/blog.html"));
+  });
+
+  app.get("/cms", function(req, res) {
+    res.sendFile(path.join(__dirname, "../Public/cms.html"));
+  });
+
+  app.get("/submit", function(req, res) {
+    res.sendFile(path.join(__dirname, "../Public/submit.html"));
   });
 
 };

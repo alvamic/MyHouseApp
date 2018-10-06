@@ -21,57 +21,76 @@ paypal.configure({
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the todos
-  app.get("/api/todos", function(req, res) {
-    db.Todo.findAll({}).then(function(dbTodo) {
-      // We have access to the todos as an argument inside of the callback function
-    res.json(dbTodo);
-  });
+ // GET route for getting all of the posts
+ app.get("/api/posts/", function(req, res) {
+  db.Post.findAll({})
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
 });
 
-  // POST route for saving a new todo. You can create a todo using the data on req.body
-  app.post("/api/todos", function(req, res) {
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property
-    db.Todo.create({
-      title: req.body.title,
-      date: req.body.date
-    }).then(function(dbTodo) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbTodo);
+// Get route for returning posts of a specific category
+app.get("/api/posts/category/:category", function(req, res) {
+  db.Post.findAll({
+    where: {
+      category: req.params.category
+    }
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
     });
-  });
+});
 
-  // DELETE route for deleting todos. You can access the todo's id in req.params.id
-  app.delete("/api/todos/:id", function(req, res) {
-        // We just have to specify which todo we want to destroy with "where"
-        db.Todo.destroy({
-          where: {
-            id: req.params.id
-          }
-        }).then(function(dbTodo) {
-          res.json(dbTodo);
-        });
+// Get route for retrieving a single post
+app.get("/api/posts/:id", function(req, res) {
+  db.Post.findOne({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
 
-  });
+// POST route for saving a new post
+app.post("/api/posts", function(req, res) {
+  console.log(req.body);
+  db.Post.create({
+    title: req.body.title,
+    body: req.body.body,
+    category: req.body.category
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
 
-  // PUT route for updating todos. The updated todo will be available in req.body
-  app.put("/api/todos", function(req, res) {
-     // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
-    db.Todo.update({
-      title: req.body.text,
-      date: req.body.complete
-    }, {
+// DELETE route for deleting posts
+app.delete("/api/posts/:id", function(req, res) {
+  db.Post.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
+
+// PUT route for updating posts
+app.put("/api/posts", function(req, res) {
+  db.Post.update(req.body,
+    {
       where: {
         id: req.body.id
       }
-    }).then(function(dbTodo) {
-      res.json(dbTodo);
+    })
+    .then(function(dbPost) {
+      res.json(dbPost);
     });
+});
 
-  });
 
   //ROUTES FOR EVENTS SECTION//
 
@@ -131,6 +150,7 @@ module.exports = function(app) {
     });
 
     app.get('/payments', (req , res) => res.render('index'));
+    
 
     app.post('/pay', (req, res)=>{
     

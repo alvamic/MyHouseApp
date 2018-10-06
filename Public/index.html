@@ -1,10 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Pixie Shire</title>
   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -16,17 +15,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Sigmar+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/style.css" />
-
    
-
-
 </head>
-
 <body>
-
     <header id="header">
         <div class="content">
             <div id="logo">
@@ -50,7 +44,7 @@
                         <a href="#slide6" title="Next Section">Issues</a>
                     </li>
                     <li>
-                        <button>Sign Out</button>
+                            <a href="SignOut.html">Sign Out</a>
                     </li>
                 </ul>
             </nav>
@@ -80,71 +74,89 @@
             <h1 id="info"> Manage,  Distribute, Moniter, all in one place!</h1>
             <div class="quotes_container">
              <div id="tasks">
-                 <h1 id="highlightsOne">Tasks, Expenses, Commute</h1>
+                 <h1 id="highlightsOne">Tasks, Expenses, Commuicate</h1>
              </div>
             </div>
         </div>
     </div>
    
-
     <div id="slide3">
         <div>
               
-                <div id="containerTwo">
+                <div data-aos="zoom-in-up" data-aos-offset="200" data-aos-delay="100" data-aos-duration="1000" id="containerTwo">
                     <h1 id=Step1> 1</h1>
                     <p>You and your fellow roomates <br>sign up with a Gmail account*</p>
                
                     <p>Once you have all signed up, <br>your profiles will get linked to each other</p>
                     <p> This will allow you to communicate <br> with not only with your roomates <br> but your landlord as well!</p>
                 </div>
-                <div id="containerThree">
+                <div data-aos="zoom-in-up" data-aos-offset="200" data-aos-delay="100" data-aos-duration="1000" id="containerThree">
                         <h1 id=Step2> 2</h1>
                         <p id="two">On the task page<br></p>
+                        <p id="two">if you or your roommates have a <br>task at hand/chores, you can post</p>
+                         <p id="two">via taskboard without the petty<br> conversations we have all had at some point.... </p>   
                 </div>
-                <div id="containerFour">
+                <div data-aos="zoom-in-up" data-aos-offset="200" data-aos-delay="100" data-aos-duration="1000" id="containerFour">
                         <h1 id=Step3> 3</h1>  
+                        <p>When it comes to rent and bills it can get <br>a little confusing when living with multiple</p>
+                        <p>people. thanks to elon musk we have added <br>paypal payment option to our app.</p> <br>
+                        <p>Living in New York, issues and problems happen, <br>but the landlord doesn't always have </p>
+                        <p>time to respond to their tenants. <br>with pixieshire you can now post an issue</p>
+                        <p>to the issue board to get a rapid response time.</p>
                         <p></p>
                 </div>
             
           
-
-                <img id="stickman" src= "css/images/kisspng-stick-figure-sitting-clip-art-relax-5ad360c1758718.8302540615238023054814.png">
-                <img id="stickmanTwo" src= "css/images/gymnastics-151825_1280.png">
-                <img id="stickmanThree" src= "css/images/5a4bc9f22da5ad73df7efe69.png">
+                <img   id="stickman" src= "css/images/kisspng-stick-figure-sitting-clip-art-relax-5ad360c1758718.8302540615238023054814.png">
+                <img   id="stickmanTwo" src= "css/images/gymnastics-151825_1280.png">
+                <img  id="stickmanThree" src= "css/images/5a4bc9f22da5ad73df7efe69.png">
                 
         </div>
     </div>
 
+
+
+
+
+
     <div id="slide4">
-            <div class="container">
-                    <div class="row mt-4">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <select class="custom-select" id="category">
-                            <option selected value="">All Categories</option>
-                            <option value="Personal">Cleaning Duties</option>
-                            <option value="Product Review">Groceries</option>
-                            <option value="Political">Bills</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-2">
-                        <a class="btn btn-light" href="/cms">New Post</a>
-                      </div>
+        <div class="container">
+            <div class="row">
+              <div class="row">
+                <div class="col-sm-2 mt-4">
+                  <a class="btn btn-light" href="/blog">Go to Blog</a>
+                </div>
+              </div>
+              <div class="col-md-5 offset-md-3">
+                <form id="cms">
+                  <div class="form-group">
+                    <label for="title">Name:</label>
+                    <input type="text" class="form-control" id="title">
+                    <br />
+                    <label for="body">Task:</label>
+                    <textarea class="form-control" rows="10" id="body"></textarea>
+                    <div class="form-group">
+                      <label for="category">Select Category:</label>
+                      <select class="custom-select" id="category">
+                        <option value="Personal">Cleaning Duties</option>
+                        <option value="Product Review">Groceries</option>
+                        <option value="Political">Bills</option>
+                      </select>
                     </div>
-                    <div class="row">
-                      <div class="col-md-12 blog-container">
-                      </div>
-                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-success submit btn-lg" href="/submit.html">Submit</button>
                   </div>
-                  <!-- Custom Script -->
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
-                  <script src="js/blog.js" type="text/javascript"></script>
-                
-        <div>
+                </form>
+              </div>
             </div>
-            </div>
-          
+          </div>
+          <script>
+            AOS.init();
+        </script>
+          <!-- Custom Script -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+          <script src="js/cms.js" type="text/javascript"></script>
 </body>
 
 </html>
+
